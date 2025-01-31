@@ -1,7 +1,7 @@
-import './GlobalStyle.scss'
+import './GlobalStyles.scss'
 
-function GlobalStyle({ children }) {
+function GlobalStyles({ children }) {
     return children;
 }
 
-export default GlobalStyle;
+export default GlobalStyles;

@@ -1,21 +1,14 @@
-import { HeaderOnly } from '~/components/Layout';
+import { DefaultLayout, HeaderOnly } from "~/components/Layouts";
+import { Home, Following, Profile, Upload, Search } from "~/pages";
 
-import Home from '~/pages/Home';
-import Following from '~/pages/Following';
-import Profile from '~/pages/Profile';
-import Upload from '~/pages/Upload';
-import Search from '~/pages/Search';
-
-// This route can be routed without login
 const publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
-    { path: '/upload', component: Upload, layout: HeaderOnly },
-    { path: '/search', component: Search, layout: null },
+    { path: '/', element: Home },
+    { path: '/following', element: Following },
+    { path: '/profile', element: Profile},
+    { path: '/upload', element: Upload, layout: null },
+    { path: '/search', element: Search, layout: HeaderOnly  },
 ];
 
-// This route can be routed requiring login
 const privateRoutes = [];
 
 export { publicRoutes, privateRoutes };
