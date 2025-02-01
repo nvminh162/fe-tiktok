@@ -1,6 +1,7 @@
 .wrapper {
     --search-border-radius: 92px;
     --search-height: 46px;
+    --search-witdh: 361px;
     --search-top-speacer: 9px;
     --button-search-width: 52px;
 
@@ -19,9 +20,13 @@
     justify-content: space-between;
 }
 
+.search,
+.search-result  {
+    width: var(--search-witdh);
+}
+
 .search {
     position: relative;
-    width: 361px;
     height: var(--search-height);
     padding-left: 16px;
     background-color: rgba(22, 24, 35, 0.06);
@@ -65,6 +70,13 @@
     transform: translateY(-50%);
     font-size: 16px;
     color: rgba(22, 24, 35, 0.34);
+}
+
+.search-title {
+    font-size: 1.4rem;
+    padding: 5px 12px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }
 
 .search-btn {
