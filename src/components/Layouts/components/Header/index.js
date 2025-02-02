@@ -25,17 +25,45 @@ const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        type: 'language options',
         title: 'English',
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        children: {
+            title: 'language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vie',
+                    title: 'Vietnamese',
+                },
+                {
+                    type: 'language',
+                    code: 'jav',
+                    title: 'Japanese',
+                },
+                {
+                    type: 'language',
+                    code: 'kor',
+                    title: 'Korean',
+                },
+            ],
+        },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        type: 'support',
         title: 'Feedback and help',
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
         to: './feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        type: 'assist',
         title: 'Keyboard shortcuts',
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
     },
 ];
 
@@ -45,6 +73,27 @@ function Header() {
     useEffect(() => {
         setSearchResult([]);
     }, []);
+
+    //handle logic chooser
+    const handleMenuChange = (menuItem) => {
+        console.log('menuItem selected:', menuItem);
+        switch (menuItem.type) {
+            case 'language options':
+                console.log('language selected');
+                break;
+            case 'support':
+                console.log('support selected');
+                break;
+            case 'assist':
+                console.log('assist selected');
+                break;
+            case 'language':
+                console.log('language selected');
+                break;
+            default:
+                break;
+        }
+    };
 
     return (
         <header className={cx('wrapper')}>
@@ -79,7 +128,7 @@ function Header() {
                     <Button primary>Login</Button>
                     {/* <Button primary rounded className={cx('custom-login')}>Custom button</Button>  */}
                     {/* <Button primary iconRight={<FontAwesomeIcon icon={faSignIn} />}>Login</Button> */}
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
