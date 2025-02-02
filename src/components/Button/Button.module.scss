@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
-    font-weight: 700;
     padding: 9px 16px;
     min-width: 100px;
     border-radius: 4px;
@@ -11,6 +10,8 @@
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none; //not selection text
+    font-weight: 700;
+    font-family: var(--font-family);
 
     + .wrapper {
         margin-left: 8px;
