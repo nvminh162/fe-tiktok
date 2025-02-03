@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import images from '~/assets/images';
 import styles from './Image.module.scss';
 
-function Image({ src, alt, className, fallback = images.noImage, ...props }, ref) {
+function Image({ src, alt, className, fallback = images.ownProject, ...props }, ref) {
     const [_fallback, setFallback] = useState('');
 
     const handleError = () => {

@@ -2,37 +2,42 @@ import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import TippyHeadless from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css'; // optional
+import TippyHeadless from '@tippyjs/react/headless';
 
 import styles from './Search.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import { useDebounce } from '~/hooks';
+import * as searchServices from '~/apiServices/searchServices';
 
 const cx = classNames.bind(styles);
 
 function Search() {
     const [searchValue, setSearchValue] = useState(''); //ki tu nhap vao
-    const inputRef = useRef();
     const [searchResult, setSearchResult] = useState([]); //ket qua tra ve hien thi
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
+    const inputRef = useRef();
+
+    const debounced = useDebounce(searchValue, 500);
 
     useEffect(() => {
         if (!searchValue.trim()) {
-            setSearchResult([])
+            setSearchResult([]);
             return;
         }
-        setLoading(true);
-        fetch(`https://jsonplaceholder.typicode.com/users?q=${encodeURIComponent(searchValue)}`)
-            .then((res) => res.json())
-            .then((res) => {
-                console.log(res);
-                setSearchResult(res);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
-    }, [searchValue]);
+
+        const fetchApi = async () => {
+            setLoading(true);
+            const result = await searchServices.search(debounced);
+            setSearchResult(result);
+            setLoading(false);
+        };
+
+        fetchApi();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [debounced]);
 
     const handleClear = () => {
         inputRef.current.focus();
