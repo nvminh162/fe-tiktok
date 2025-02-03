@@ -49,6 +49,13 @@ function Search() {
         setShowResult(false);
     };
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(` `)) {
+            setSearchValue(searchValue);
+        }
+    };
+
     return (
         <TippyHeadless
             interactive
@@ -71,9 +78,9 @@ function Search() {
                 <input
                     value={searchValue}
                     ref={inputRef}
-                    placeholder="Seach now..."
+                    placeholder="nvminh162: How to master react"
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={() => setShowResult(true)}
                 />
                 {!!searchValue && !loading && (
@@ -82,7 +89,7 @@ function Search() {
                     </button>
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-                <button className={cx('search-btn')}>{<FontAwesomeIcon icon={faMagnifyingGlass} />}</button>
+                <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>{<FontAwesomeIcon icon={faMagnifyingGlass} />}</button>
             </div>
         </TippyHeadless>
     );
