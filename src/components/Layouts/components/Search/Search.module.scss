@@ -44,10 +44,24 @@
     position: absolute;
     right: var(--button-search-width);
     top: 50%;
-    right: calc(var(--button-search-width) + 16px);
     transform: translateY(-50%);
+    right: calc(var(--button-search-width) + 16px);
     font-size: 16px;
     color: rgba(22, 24, 35, 0.34);
+}
+
+.loading {
+    animation: spinner 0.5s linear infinite;
+}
+
+//loading
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 .search-title {

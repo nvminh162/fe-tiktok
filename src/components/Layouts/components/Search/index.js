@@ -12,24 +12,37 @@ import AccountItem from '~/components/AccountItem';
 const cx = classNames.bind(styles);
 
 function Search() {
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState(''); //ki tu nhap vao
     const inputRef = useRef();
-    const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true)
+    const [searchResult, setSearchResult] = useState([]); //ket qua tra ve hien thi
+    const [showResult, setShowResult] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setSearchResult([1]);
-    }, []);
+        if (!searchValue.trim()) {
+            setSearchResult([])
+            return;
+        }
+        setLoading(true);
+        fetch(`https://jsonplaceholder.typicode.com/users?q=${encodeURIComponent(searchValue)}`)
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
+                setSearchResult(res);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
+    }, [searchValue]);
 
     const handleClear = () => {
         inputRef.current.focus();
         setSearchValue('');
-        setSearchResult([])
-    }
+        setSearchResult([]);
+    };
 
     const handleHideResult = () => {
-        setShowResult(false)
-    }
+        setShowResult(false);
+    };
 
     return (
         <TippyHeadless
@@ -40,9 +53,10 @@ function Search() {
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
                         <h4 className={cx('search-title')}>Accounts</h4>
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
+                        {/* render result */}
+                        {searchResult.map((result) => (
+                            <AccountItem key={result.id} data={result} />
+                        ))}
                     </PopperWrapper>
                 </div>
             )}
@@ -57,15 +71,12 @@ function Search() {
                     onChange={(e) => setSearchValue(e.target.value)}
                     onFocus={() => setShowResult(true)}
                 />
-                {!!searchValue && (
-                    <button
-                        className={cx('clear')}
-                        onClick={handleClear}
-                    >
+                {!!searchValue && !loading && (
+                    <button className={cx('clear')} onClick={handleClear}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                 )}
-                {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
+                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
                 <button className={cx('search-btn')}>{<FontAwesomeIcon icon={faMagnifyingGlass} />}</button>
             </div>
         </TippyHeadless>
