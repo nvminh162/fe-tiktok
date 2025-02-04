@@ -31,7 +31,7 @@ const MENU_ITEMS = [
         title: 'English',
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         children: {
-            title: 'language',
+            title: 'Language',
             data: [
                 { type: 'language', code: 'eng', title: 'English' },
                 { type: 'language', code: 'vie', title: 'Vietnamese' },
