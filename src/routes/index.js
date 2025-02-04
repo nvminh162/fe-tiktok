@@ -1,13 +1,13 @@
-import { HeaderOnly } from '~/components/Layouts';
+import { HeaderOnly } from '~/layouts';
 import { Home, Following, Profile, Upload, Search } from '~/pages';
-import routesConfig from '~/config/routes.js'
+import config from '~/config';
 
 const publicRoutes = [
-    { path: routesConfig.home, element: Home },
-    { path: routesConfig.following, element: Following },
-    { path: routesConfig.profile, element: Profile },
-    { path: routesConfig.upload, element: Upload, layout: null },
-    { path: routesConfig.search, element: Search, layout: HeaderOnly },
+    { path: config.routes.home, element: Home },
+    { path: config.routes.following, element: Following },
+    { path: config.routes.profile, element: Profile },
+    { path: config.routes.upload, element: Upload, layout: null },
+    { path: config.routes.search, element: Search, layout: HeaderOnly },
 ];
 
 const privateRoutes = [];
