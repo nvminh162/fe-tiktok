@@ -20,7 +20,7 @@ function Search() {
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     useEffect(() => {
         if (!searchValue.trim()) {
@@ -30,14 +30,14 @@ function Search() {
 
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchServices.search(debounced);
+            const result = await searchServices.search(debouncedValue);
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchApi();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleClear = () => {
         inputRef.current.focus();
