@@ -1,5 +1,5 @@
 import Tippy from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
+import PopperWrapper from '~/components/PopperWrapper';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 

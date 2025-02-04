@@ -1,17 +1,17 @@
 import classNames from "classnames/bind";
 import PropTypes from 'prop-types'
 
-import styles from './Popper.module.scss'
+import styles from './PopperWrapper.module.scss'
 
 const cx = classNames.bind(styles)
 
-function Wrapper({ children, className }) {
+function PopperWrapper({ children, className }) {
     return <div className={cx('wrapper', className)}>{children}</div>;
 }
 
-Wrapper.propTypes = {
+PopperWrapper.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
 }
 
-export default Wrapper;
+export default PopperWrapper;
