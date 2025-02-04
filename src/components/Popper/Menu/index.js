@@ -52,7 +52,7 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false 
                                 onBack={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-scrollable')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

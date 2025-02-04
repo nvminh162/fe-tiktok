@@ -8,6 +8,7 @@
     display: flex;
     width: var(--default-layout-width, 1150px);
     padding: 0 var(--default-layout-horizontal-spacer);
+    margin-top: var(--default-layout-header-height);
 }
 
 .content {

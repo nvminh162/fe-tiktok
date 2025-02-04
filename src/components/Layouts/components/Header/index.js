@@ -21,7 +21,7 @@ import Menu from '~/components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '~/components/Layouts/components/Search';
-import routesConfig from '~/config/routes.js'
+import routesConfig from '~/config/routes.js';
 
 const cx = classNames.bind(styles);
 
@@ -33,26 +33,26 @@ const MENU_ITEMS = [
         children: {
             title: 'language',
             data: [
-                {
-                    type: 'language',
-                    code: 'eng',
-                    title: 'English',
-                },
-                {
-                    type: 'language',
-                    code: 'vie',
-                    title: 'Vietnamese',
-                },
-                {
-                    type: 'language',
-                    code: 'jav',
-                    title: 'Japanese',
-                },
-                {
-                    type: 'language',
-                    code: 'kor',
-                    title: 'Korean',
-                },
+                { type: 'language', code: 'eng', title: 'English' },
+                { type: 'language', code: 'vie', title: 'Vietnamese' },
+                { type: 'language', code: 'fra', title: 'French' },
+                { type: 'language', code: 'deu', title: 'German' },
+                { type: 'language', code: 'spa', title: 'Spanish' },
+                { type: 'language', code: 'ita', title: 'Italian' },
+                { type: 'language', code: 'por', title: 'Portuguese' },
+                { type: 'language', code: 'rus', title: 'Russian' },
+                { type: 'language', code: 'jpn', title: 'Japanese' },
+                { type: 'language', code: 'kor', title: 'Korean' },
+                { type: 'language', code: 'zho', title: 'Chinese' },
+                { type: 'language', code: 'tha', title: 'Thai' },
+                { type: 'language', code: 'ara', title: 'Arabic' },
+                { type: 'language', code: 'nld', title: 'Dutch' },
+                { type: 'language', code: 'pol', title: 'Polish' },
+                { type: 'language', code: 'tur', title: 'Turkish' },
+                { type: 'language', code: 'ell', title: 'Greek' },
+                { type: 'language', code: 'hin', title: 'Hindi' },
+                { type: 'language', code: 'ind', title: 'Indonesian' },
+                { type: 'language', code: 'swe', title: 'Swedish' },
             ],
         },
     },
@@ -124,9 +124,12 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt="TikTok" /></Link>
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="TikTok" />
+                </Link>
 
                 <Search />
+                
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>

@@ -5,11 +5,16 @@
     --search-top-speacer: 9px;
     --button-search-width: 52px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: var(--default-layout-header-height, 60px); //var, default
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
     display: flex;
     justify-content: center;
+    height: var(--default-layout-header-height, 60px); //var, default
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+    background-color: var(--white);
+    z-index: 10;
 }
 
 .inner {
@@ -46,8 +51,8 @@
     font-size: 2.4rem;
     background-color: transparent;
     color: #161823;
-    padding: 4px 10px; 
-    cursor: pointer;   
+    padding: 4px 10px;
+    cursor: pointer;
 }
 
 .user-avatar {
