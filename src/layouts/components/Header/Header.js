@@ -25,6 +25,8 @@ import config from '~/config';
 
 const cx = classNames.bind(styles);
 
+let auth = true;
+
 const MENU_ITEMS = [
     {
         type: 'language options',
@@ -60,10 +62,10 @@ const MENU_ITEMS = [
         type: 'support',
         title: 'Feedback and help',
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        to: './feedback',
+        to: '/feedback',
     },
     {
-        type: 'assist',
+        type: 'keyboard',
         title: 'Keyboard shortcuts',
         icon: <FontAwesomeIcon icon={faKeyboard} />,
     },
@@ -71,7 +73,7 @@ const MENU_ITEMS = [
 
 const MENU_USER = [
     {
-        type: 'view',
+        type: 'profile',
         title: 'View profile',
         icon: <FontAwesomeIcon icon={faUser} />,
         to: '/profile',
@@ -93,28 +95,36 @@ const MENU_USER = [
         type: 'logout',
         title: 'Log out',
         icon: <FontAwesomeIcon icon={faSignOut} />,
-        to: './logout',
         separate: true,
     },
 ];
 
 function Header() {
-    const currentUser = true;
     //handle logic chooser
     const handleMenuChange = (menuItem) => {
-        console.log('menuItem selected:', menuItem);
+        // console.log('menuItem selected:', menuItem);
         switch (menuItem.type) {
-            case 'language options':
+            case 'profile':
+                console.log('profile selected');
+                break;
+            case 'coin':
+                console.log('coin selected');
+                break;
+            case 'setting':
+                console.log('setting selected');
+                break;
+            case 'language':
                 console.log('language selected');
+                console.log('menuItem selected:', menuItem);
                 break;
             case 'support':
                 console.log('support selected');
                 break;
-            case 'assist':
-                console.log('assist selected');
+            case 'keyboard':
+                console.log('keyboard selected');
                 break;
-            case 'language':
-                console.log('language selected');
+            case 'logout':
+                console.log('logout selected');
                 break;
             default:
                 break;
@@ -129,14 +139,14 @@ function Header() {
                 </Link>
 
                 <Search />
-                
+
                 <div className={cx('actions')}>
-                    {currentUser ? (
+                    {auth ? (
                         <>
                             <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
-                                <button className={cx('actions-btn')}>
+                                <Link to={config.routes.upload} className={cx('actions-btn')}>
                                     <UploadIcon />
-                                </button>
+                                </Link>
                             </Tippy>
                             <Tippy delay={[0, 50]} content="Message" placement="bottom">
                                 <button className={cx('actions-btn')}>
@@ -152,14 +162,18 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button text>Upload</Button>
-                            <Button primary>Login</Button>
+                            <Button text to={config.routes.upload}>
+                                Upload
+                            </Button>
+                            <Button primary to={config.routes.login}>
+                                Login
+                            </Button>
                             {/* <Button primary rounded className={cx('custom-login')}>Custom button</Button>  */}
                             {/* <Button primary iconRight={<FontAwesomeIcon icon={faSignIn} />}>Login</Button> */}
                         </>
                     )}
-                    <Menu items={currentUser ? MENU_USER : MENU_ITEMS} onChange={handleMenuChange}>
-                        {currentUser ? (
+                    <Menu items={auth ? MENU_USER : MENU_ITEMS} onChange={handleMenuChange}>
+                        {auth ? (
                             <Image
                                 className={cx('user-avatar')}
                                 src="error path"

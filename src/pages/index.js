@@ -4,3 +4,4 @@ export { default as Profile } from './Profile';
 export { default as Upload } from './Upload';
 export { default as Search } from './Search';
 export { default as Live } from './Live';
+export { default as Login } from './Login';
