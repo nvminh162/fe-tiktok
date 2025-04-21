@@ -1,0 +1,122 @@
+rm -rf node_modules package-lock.json
+
+written by @nvminh162
+# create app
+	npx create-react-app fe-tiktok
+	
+	code .
+	
+	if error: npm i 'lib name missing'
+
+# Install customize-cra:
+	https://github.com/arackaf/customize-cra
+	https://github.com/timarney/react-app-rewired/
+	---
+	#1(DevMode): 
+		npm i customize-cra react-app-rewired -D
+	#2 #3 
+		https://github.com/timarney/react-app-rewired/
+		
+# Install babel-plugin-module-resolver
+	https://github.com/tleunen/babel-plugin-module-resolver
+	npm install --save-dev babel-plugin-module-resolver
+	
+	Specify the plugin in your .babelrc with the custom root or alias. Here's an example:
+		{
+			"plugins": [
+				[
+					"module-resolver",
+					{
+						"alias": {
+							"~": "./src"
+						}
+					}
+				]
+			]
+		}
+	Configure the path mapping in jsconfig.json (tsconfig.json for TypeScript), e.g.:
+	{
+		"compilerOptions": {
+			"baseUrl": ".",
+			"paths": {
+				"~/*": [
+					"src/*"
+				]
+			}
+		}
+	}
+	Edit file config-overrides.js
+	https://github.com/arackaf/customize-cra/blob/master/api.md
+	const { override, useBabelRc } = require("customize-cra");
+	module.exports = override(
+	  useBabelRc()
+	);
+	
+	Can run to test
+
+# Prettier
+	Extension VSCode: Prettier - Code formatter
+	create .prettierrc
+	{
+		"arrowParens": "always",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"embeddedLanguageFormatting": "auto",
+		"htmlWhitespaceSensitivity": "css",
+		"insertPragma": false,
+		"jsxSingleQuote": false,
+		"printWidth": 120, //optional
+		"proseWrap": "preserve",
+		"quoteProps": "as-needed",
+		"requirePragma": false,
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": false,
+		"vueIndentScriptAndStyle": false
+	}
+	tạo .vscode/setting.json
+	{
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+	
+# install SASS/SCSS
+	sass: npm i -D sass
+	(delete file css ... not necessary)
+	reset css normalize: npm install --save normalize.css
+	
+# install Router
+	npm i react-router-dom
+	
+# install classnames (scss)
+	npm i classnames
+	or
+	npm i clsx
+	
+tippyjs react (tooltip, dropdown, popper) => <	how to search: tippy react props/>
+https://github.com/atomiks/tippyjs-react
+	npm i @tippyjs/react
+
+# install axios
+	npm install axios
+	
+============================================================
+simple react snippets
+htmltagwrap
+prettier
+Prettier - Code formatter
+
+font lib
+npm install @fortawesome/fontawesome-svg-core@latest
+npm install @fortawesome/free-brands-svg-icons@latest
+npm install @fortawesome/free-regular-svg-icons@latest
+npm install @fortawesome/free-solid-svg-icons@latest
+npm install @fortawesome/react-fontawesome@latest
+
+======================================
+
+Check dependencies (update and not use)
+npm install --save-dev npm-check
+npx npm-check
