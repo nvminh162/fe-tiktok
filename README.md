@@ -90,18 +90,4 @@ Nếu có thắc mắc hoặc cần hỗ trợ, bạn có thể liên hệ qua G
 
 ## License
 
-Thông tin license (nếu có) hoặc để trống nếu không áp dụng.
-
----
-
-Nếu bạn muốn, tôi có thể giúp bạn bổ sung thêm phần mô tả chi tiết hơn về tính năng hoặc hướng dẫn nâng cao.
-
-Citations:
-[1] https://github.com/nvminh162/fe-tiktok
-[2] https://github.com/tiktok
-[3] https://github.com/dfreelon/pyktok
-[4] https://github.com/will-moss/erin
-[5] https://github.com/nc-minh/fe-tiktok
-
----
-Answer from Perplexity: pplx.ai/share
+@nvminh162
