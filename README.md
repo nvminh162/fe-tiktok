@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Học viên: Nguyễn Văn Minh
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dưới đây là mẫu file README cho dự án GitHub của bạn "fe-tiktok" dựa trên thông tin có sẵn từ repository và chuẩn thông tin phổ biến cho dự án ReactJS:
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# fe-tiktok
 
-### `npm start`
+Dự án khoá học ReactJS F8 - Frontend TikTok clone
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Giới thiệu
 
-### `npm test`
+Dự án này là một ứng dụng frontend được xây dựng bằng ReactJS, mô phỏng giao diện và một số tính năng cơ bản của TikTok. Dự án được khởi tạo bằng Create React App, phục vụ mục đích học tập và thực hành ReactJS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tính năng chính
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Giao diện giống TikTok với video dạng feed
+- Hỗ trợ phát video, chuyển video liên tục
+- Xây dựng bằng ReactJS với cấu trúc hiện đại
+- Dễ dàng mở rộng và tùy chỉnh
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Bắt đầu
 
-### `npm run eject`
+### Yêu cầu
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (phiên bản mới nhất khuyến khích)
+- npm hoặc yarn
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Cài đặt
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone repository về máy:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/nvminh162/fe-tiktok.git
+cd fe-tiktok
+```
 
-## Learn More
+2. Cài đặt các package phụ thuộc:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+# hoặc
+yarn install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Chạy ứng dụng
 
-### Code Splitting
+```bash
+npm start
+# hoặc
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Mở trình duyệt và truy cập http://localhost:3000 để xem ứng dụng.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Các lệnh có thể sử dụng
 
-### Making a Progressive Web App
+- `npm start` - Chạy ứng dụng ở chế độ phát triển, tự động reload khi có thay đổi.
+- `npm test` - Chạy chế độ test tương tác.
+- `npm run build` - Tạo bản build tối ưu cho production trong thư mục `build`.
+- `npm run eject` - Eject khỏi Create React App để tùy chỉnh cấu hình (không thể quay lại).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Triển khai
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Sau khi build, bạn có thể triển khai thư mục `build` lên bất kỳ dịch vụ hosting tĩnh nào như Netlify, Vercel, GitHub Pages,...
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Đóng góp
 
-### `npm run build` fails to minify
+Mọi đóng góp đều được hoan nghênh! Bạn có thể fork repo, tạo branch mới, và gửi pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Liên hệ
+
+Nếu có thắc mắc hoặc cần hỗ trợ, bạn có thể liên hệ qua GitHub hoặc email cá nhân.
+
+---
+
+## License
+
+Thông tin license (nếu có) hoặc để trống nếu không áp dụng.
+
+---
+
+Nếu bạn muốn, tôi có thể giúp bạn bổ sung thêm phần mô tả chi tiết hơn về tính năng hoặc hướng dẫn nâng cao.
+
+Citations:
+[1] https://github.com/nvminh162/fe-tiktok
+[2] https://github.com/tiktok
+[3] https://github.com/dfreelon/pyktok
+[4] https://github.com/will-moss/erin
+[5] https://github.com/nc-minh/fe-tiktok
+
+---
+Answer from Perplexity: pplx.ai/share
